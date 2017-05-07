@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="classname">{{branchName}}</view>
+
+<view class="section" style="margin:20px">
+  <text class="">选择币种：</text>
+  <picker bindchange="currencyCodeChange" value="{{index}}" range="{{currencyList}}">
+    <text class="picker">
+      {{currencyList[index]}}
+    </text>
+  </picker>
+</view>
+
+<view class="classname">100USD=696.45CNY汇率更新 10:30:33</view>
+
+<view wx:for="{{products}}" wx:key="{{index}}">
+  <text> {{item.ProductName}} </text>
+  <text> {{item.UnitAmount}} </text>
+  <button style="display:inline;" data-index="{{index}}" data-value="-1" bindtap="productCountChange">-</button>
+  <text>{{item.count}}</text>
+  <button style="display:inline;" data-index="{{index}}" data-value="1" bindtap="productCountChange">+</button>
+</view>
+
+<view class="section">
+  姓名：<input type="text" value="{{name}}" bindinput="inputChange" data-type="name" placeholder="请输入姓名"/>
+</view>
+<view class="section">
+  电话：<input type="number" value="{{mobile}}" bindinput="inputChange" data-type="mobile" placeholder="请输入电话号码"/>
+</view>
+<view class="section">
+  身份证：<input type="idcard" value="{{idCart}}" bindinput="inputChange" data-type="idCart" placeholder="请输入身份证号" />
+</view>
+
+<view class="classname">
+ <navigator url="../tips/tips" hover-class="navigator-hover">服务条款</navigator>
+</view>
+
+<view class="classname">
+ <navigator url="../detail/detail" hover-class="navigator-hover">订单详情</navigator>
+</view>
+
